@@ -1,5 +1,21 @@
-<%= simple_form_for ([@cocktail, @dose]) do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient, collection: Ingredient.order("name ASC") %>
-  <%= f.button :submit %>
-<% end %>
+<div class="navbar-wagon navbar-fixed-top">
+
+  <%= link_to cocktails_path , class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.jpg", alt: "logo", class: "img-circle" %>
+  <% end %>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509157774525-cd6d6cbf00a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=248c1166a9905ca8718e9c466fa347ee&auto=format&fit=crop&w=1650&q=80');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+    <h2>Add an ingredient</h2>
+    <%= simple_form_for ([@cocktail, @dose]) do |f| %>
+      <%= f.association :ingredient, collection: Ingredient.order("name ASC") %>
+      <%= f.input :description %>
+      <%= f.submit class: "btn-cocktail width-100" %>
+    <% end %>
+  </div>
+</div>
+
+
+

@@ -1,22 +1,26 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
 
-  <%= link_to 'My Cocktails', cocktails_path, class: "navbar-wagon-brand" %>
-  <!--   <img src="images/logo.png" alt="logo"> -->
+  <!-- Logo -->
+  <%= link_to cocktails_path , class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.jpg", alt: "logo", class: "img-circle" %>
+  <% end %>
 
   <div class="navbar-wagon-right">
-    <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-primary" %>
+    <%= link_to 'Add cocktail', new_cocktail_path, class: "btn-cocktail" %>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.card_picture %>);">
-          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  <div class="cocktail-container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cocktail.card_picture %>);">
+            <h3><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-description" %></h3>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

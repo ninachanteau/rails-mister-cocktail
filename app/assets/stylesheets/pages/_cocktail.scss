@@ -1,0 +1,23 @@
+.show-banner {
+  height: 400px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-card {
+  font-weight: lighter;
+  p {
+    font-size: 15px;
+  }
+}
+
+.description {
+  flex: 60%;
+}
+
+.ingredients {
+  flex: 40%;
+}
