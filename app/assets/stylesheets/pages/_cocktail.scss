@@ -1,3 +1,8 @@
+.cocktail-container {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
 .show-banner {
   height: 400px;
 }
@@ -5,6 +10,7 @@
 .info-container {
   display: flex;
   justify-content: space-between;
+  height: 270px;
 }
 
 .info-card {
@@ -16,8 +22,16 @@
 
 .description {
   flex: 60%;
+  position: relative;
 }
 
 .ingredients {
   flex: 40%;
+  position: relative;
 }
+
+.links {
+  position: absolute;
+  bottom: 10px;
+}
+

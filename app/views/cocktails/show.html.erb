@@ -14,15 +14,31 @@
     <div class="info-card description">
       <h3>Description</h3>
       <p><%= @cocktail.description %></p>
-      <%= link_to 'Edit cocktail', edit_cocktail_path(@cocktail), class: "btn-cocktail" %>
-      <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn-cocktail" %>
+      <div class="links">
+        <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: "btn-cocktail" %>
+        <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, class: "btn-cocktail" %>
+        <%= link_to 'Add review', new_cocktail_review_path(@cocktail), class: "btn-cocktail" %>
+      </div>
     </div>
     <div class="info-card ingredients">
       <h3>Ingredients</h3>
       <% @cocktail.doses.each do |dose| %>
         <p><strong><%= dose.ingredient.name %></strong> - <%= dose.description %> (<%= link_to 'delete', dose_path(dose), method: :delete %>)</p>
       <% end %>
-      <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn-cocktail" %>
+      <div class="links">
+        <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn-cocktail" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-container">
+    <div class="info-card">
+      <h3>Reviews</h3>
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+          <li><strong><%= "*" * review.rating %></strong> - <%= review.content %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
