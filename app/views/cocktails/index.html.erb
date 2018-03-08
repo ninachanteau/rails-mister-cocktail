@@ -1,7 +1,23 @@
-<h1>My Cocktails</h1>
+<div class="navbar-wagon">
 
-<h3><%= link_to 'Add cocktail', new_cocktail_path %></h3>
+  <%= link_to 'My Cocktails', cocktails_path, class: "navbar-wagon-brand" %>
+  <!--   <img src="images/logo.png" alt="logo"> -->
 
-<% @cocktails.each do |cocktail| %>
-  <%= link_to cocktail.name, cocktail_path(cocktail) %>
- <% end %>
+  <div class="navbar-wagon-right">
+    <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-md-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.card_picture %>);">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
