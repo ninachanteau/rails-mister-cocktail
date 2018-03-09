@@ -5,7 +5,7 @@
   <% end %>
 </div>
 
-<div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.show_picture %>);">
+<div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @cocktail.show_picture %>);">
   <h2><%= @cocktail.name %></h2>
 </div>
 

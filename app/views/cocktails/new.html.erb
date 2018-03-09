@@ -11,7 +11,9 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :card_picture %>
+      <%= f.input :card_picture_cache, as: :hidden %>
       <%= f.input :show_picture %>
+      <%= f.input :show_picture_cache, as: :hidden %>
       <%= f.submit class: "btn-cocktail width-100" %>
     <% end %>
   </div>

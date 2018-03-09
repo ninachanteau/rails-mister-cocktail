@@ -15,7 +15,7 @@
     <div class="row">
       <% @cocktails.each do |cocktail| %>
         <div class="col-md-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cocktail.card_picture %>);">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path cocktail.card_picture %>);">
             <h3><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-description" %></h3>
           </div>
         </div>

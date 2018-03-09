@@ -12,16 +12,6 @@ puts 'Cleaning database...'
 Ingredient.destroy_all
 
 puts 'Creating ingredients...'
-# Ingredient.create(name: "lemon")
-# Ingredient.create(name: "ice")
-# Ingredient.create(name: "mint leaves")
-# Ingredient.create(name: "champagne")
-# Ingredient.create(name: "rhum")
-# Ingredient.create(name: "gin")
-# Ingredient.create(name: "cucumber")
-# Ingredient.create(name: "rasberries")
-# Ingredient.create(name: "aperol")
-# Ingredient.create(name: "orange")
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 response = open(url).read
