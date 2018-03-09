@@ -36,14 +36,16 @@
       <h3>Reviews</h3>
       <ul>
         <% @cocktail.reviews.each do |review| %>
-          <li><strong><%= "*" * review.rating %></strong> - <%= review.content %></li>
+          <li>
+            <% review.rating.times do %>
+              <strong><i class="fas fa-star"></i></strong>
+            <% end %>
+           - <%= review.content %>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
-
-
-
 
 
